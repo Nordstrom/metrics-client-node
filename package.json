@@ -1,0 +1,40 @@
+{
+  "name": "metrics-client-node",
+  "version": "0.0.1",
+  "description": "Metrics Client to send metrics to Telegraf via different protocols with configuratable bufferring feature",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nordstrom/metrics-client-node.git"
+  },
+  "scripts": {
+    "test": "snazzy && istanbul cover _mocha",
+    "lint": "snazzy",
+    "tdd": "mocha -w",
+    "ci": "snazzy && istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "files": [
+    "index.js",
+    "lib/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "Yun Wang(yunwang240)",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Nordstrom/metrics-client-node#readme",
+  "dependencies": {
+    "influx": "^5.0.4",
+    "buffered-messenger-node": "git+https://github.com/Nordstrom/buffered-messenger-node.git",
+    "lodash": "^4.17.2",
+    "telegrafjs": "^0.1.3"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mock-udp": "^0.1.1",
+    "mockery": "^2.0.0",
+    "snazzy": "^5.0.0",
+    "standard": "^8.6.0"
+  }
+}
