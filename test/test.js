@@ -120,7 +120,7 @@ describe('MetricsClient Test', function () {
       })
   })
 
-  it.only('Test http protocol with small buffer', function () {
+  it('Test http protocol with small buffer', function () {
     var client = new MetricsClient({
       protocol: 'udp',
       bufferEnabled: true,
