@@ -23,8 +23,9 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/Nordstrom/metrics-client-node#readme",
   "dependencies": {
-    "influx": "^5.0.4",
+    "bluebird": "^3.4.7",
     "buffered-messenger-node": "git+https://github.com/Nordstrom/buffered-messenger-node.git",
+    "influx": "^5.0.4",
     "lodash": "^4.17.2",
     "telegrafjs": "^0.1.3"
   },
