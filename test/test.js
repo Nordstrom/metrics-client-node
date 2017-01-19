@@ -149,7 +149,7 @@ describe('MetricsClient Test', function () {
       })
   })
 
-  it.only('Test udp protocol with small interval', function () {
+  it('Test udp protocol with small interval', function () {
     var client = new MetricsClient({
       protocol: 'udp',
       bufferEnabled: true,
