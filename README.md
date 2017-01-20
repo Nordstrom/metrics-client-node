@@ -37,6 +37,14 @@ To send message(s)
 ```js
 client.send(message)
 ```
+We accept one message or a list of messages, which needs to have a format of 
+```json
+{
+    measure: 'measure-name',
+    fields: { field1: 123, field2: 'someOtherValse' },
+    tags: { tag1: 'tag1', tag2: 'tag2'}
+}
+```
 
 To close the client
 ```js
