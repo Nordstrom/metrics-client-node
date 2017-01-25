@@ -10,35 +10,25 @@ npm install git+https://github.com/Nordstrom/metrics-client-node.git --save
 ```
 
 ### Usage
-To get started, initialize a new instance with protocol.
+To get started, initialize a new instance with protocol. 
 ```js
 const MetricsClient = require('metrics-client-node')
 var client = new MetricsClient({
-      protocol: 'udp',
+      handler: 'telegrafHttpHandler',
       host: 'localhost',
-      port: 8092
+      port: 8186,
+      database: 'test',
+      maxBufferSize: 0
     })
 ```
-Or to enable buffer
-```js
-const MetricsClient = require('metrics-client-node')
-var client = new MetricsClient({
-        protocol: 'http',
-        bufferEnabled: true,
-        host: metrics.lambda.uri,
-        port: +metrics.lambda.port,
-        database: metrics.influxdb,
-        maxBufferSize: +metrics.bufferSize,
-        flushInterval: +metrics.flushInterval
-    })
-```
+
 
 To send message(s)
 ```js
 client.send(message)
 ```
 We accept one message or a list of messages, which needs to have a format of 
-```json
+```js
 {
     measure: 'measure-name',
     fields: { field1: 123, field2: 'someOtherValse' },
@@ -52,4 +42,12 @@ client.close()
 ```
 
 ### Limitation
-We only support 2 protocols: http and udp; and udp is only default protocol.
+We only have 2 handler implementations: telegrafHttpHandler and telegrafUdpHandler. User can provide the implementation of its own handler implementation.
+```js
+var handler = function(options) {
+    return (messages) => {
+        // implementation here
+    }
+}
+```
+

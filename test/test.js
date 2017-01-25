@@ -7,10 +7,11 @@ const it = require('mocha').it
 describe('MetricsClient Test', function () {
   it('Test http protocl w/o buffer', function () {
     var client = new MetricsClient({
-      protocol: 'http',
+      handler: 'telegrafHttpHandler',
       host: 'localhost',
       port: 8186,
-      database: 'yun_local_test'
+      database: 'yun_local_test',
+      maxBufferSize: 0
     })
 
     return client.send([
@@ -31,9 +32,10 @@ describe('MetricsClient Test', function () {
 
   it('Test udp protocol w/o buffer', function () {
     var client = new MetricsClient({
-      protocol: 'udp',
+      handler: 'telegrafUdpHandler',
       host: 'localhost',
-      port: 8092
+      port: 8092,
+      maxBufferSize: 0
     })
 
     return client.send([{
@@ -52,7 +54,7 @@ describe('MetricsClient Test', function () {
 
   it('Test http protocol with small buffer', function () {
     var client = new MetricsClient({
-      protocol: 'http',
+      handler: 'telegrafHttpHandler',
       bufferEnabled: true,
       host: 'localhost',
       port: 8186,
@@ -85,7 +87,7 @@ describe('MetricsClient Test', function () {
 
   it('Test http protocol with small interval', function () {
     var client = new MetricsClient({
-      protocol: 'http',
+      handler: 'telegrafHttpHandler',
       bufferEnabled: true,
       host: 'localhost',
       port: 8186,
@@ -119,7 +121,7 @@ describe('MetricsClient Test', function () {
 
   it('Test udp protocol with small buffer', function () {
     var client = new MetricsClient({
-      protocol: 'udp',
+      handler: 'telegrafUdpHandler',
       bufferEnabled: true,
       host: 'localhost',
       port: 8092,
@@ -151,7 +153,7 @@ describe('MetricsClient Test', function () {
 
   it('Test udp protocol with small interval', function () {
     var client = new MetricsClient({
-      protocol: 'udp',
+      handler: 'telegrafUdpHandler',
       bufferEnabled: true,
       host: 'localhost',
       port: 8092,
