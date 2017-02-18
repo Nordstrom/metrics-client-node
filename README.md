@@ -6,13 +6,13 @@ Metrics Client to send metrics to Telegraf via different protocols with configur
 ## Install
 Install with
 ```
-npm install git+https://github.com/Nordstrom/metrics-client-node.git --save
+npm install metrics-client --save
 ```
 
 ### Usage
 To get started, initialize a new instance with protocol. 
 ```js
-const MetricsClient = require('metrics-client-node')
+const MetricsClient = require('metrics-client')
 var client = new MetricsClient({
       handler: 'telegrafHttpHandler',
       host: 'localhost',

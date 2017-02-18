@@ -1,8 +1,6 @@
 'use strict'
 
 const MetricsClient = require('../index.js')
-const describe = require('mocha').describe
-const it = require('mocha').it
 
 describe('MetricsClient Test', function () {
   it('Test http protocl w/o buffer', function () {

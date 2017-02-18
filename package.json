@@ -1,6 +1,6 @@
 {
-  "name": "metrics-client-node",
-  "version": "0.0.1",
+  "name": "metrics-client",
+  "version": "0.1.0",
   "description": "Metrics Client to send metrics to Telegraf via different protocols with configuratable bufferring feature",
   "main": "index.js",
   "repository": {
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/Nordstrom/metrics-client-node#readme",
   "dependencies": {
     "bluebird": "^3.4.7",
-    "buffered-messenger-node": "git+https://github.com/Nordstrom/buffered-messenger-node.git",
+    "buffered-messenger-node": "^0.1.0",
     "influx": "^5.0.4",
     "lodash": "^4.17.2",
     "require-directory": "^2.1.1",
@@ -39,5 +39,13 @@
     "mockery": "^2.0.0",
     "snazzy": "^5.0.0",
     "standard": "^8.6.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach"
+    ]
   }
 }
