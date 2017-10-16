@@ -23,7 +23,8 @@ module.exports = function (options) {
   return (messages) => {
     var udpClient = new telegraf.TelegrafUDPClient({
       host: options.host,
-      port: options.port
+      port: options.port,
+      logger: options.logger
     })
     return udpClient.connect()
       .then(function () {
