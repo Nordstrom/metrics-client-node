@@ -1,6 +1,6 @@
 {
   "name": "metrics-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Metrics Client to send metrics to Telegraf via different protocols with configuratable bufferring feature",
   "main": "index.js",
   "repository": {
